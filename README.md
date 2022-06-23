@@ -15,13 +15,13 @@ To reproduce the bug:
 2. Open a project
 3. In the explorer, right-click on a file and select `Rename`.
 4. Rename the file's name.  Only change the case of some of the characters, don't add or remove characters.  (eg. rename `homepage.html` to `homePage.html`)
-5. In the explorer, right-click on the same file and select `Example Tree Node Command`
+5. In the explorer, right-click the same file and select `Example Tree Node Command`
 
 Result:
 When debugging, you should break into `exampleCommand()`.  Observe the sourceUri that's passed in, and notice that the paths in sourceUri are to `homePage.html`, which is expected.
 
-6. If not already opened, open the file that was renamed (eq `homePage.html`)
-7. Right-click in the editor and select `Example Editor Command`
+6. If not already opened, open the file that was renamed (eg `homePage.html`)
+7. Right-click within the editor and select `Example Editor Command`
 
 Result:
 When debugging, you should break into `exampleCommand()`.  Observe the sourceUri that's passed in, and notice that the paths in sourceUri are incorrect, and are the stale/original `homepage.html`.
